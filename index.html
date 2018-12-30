@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Story</title>
+	<!-- <embed src="music\boys.mp3" hidden="true" autostart="true" loop="true"> -->
+
+	<audio autoplay="autoplay" controls="controls"loop="loop" preload="auto"
+            	src="music\boys.mp3">
+	</audio>
+
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+
+				2018年6月30号下午与杨同学相识于 soul，相聊甚欢，然后我们交换了微信。 <br />
+				后来得知杨同学本来就打算卸载 soul，在使用 soul 的弥留之际认识了杨同学，实属幸运。 <br />
+				买了一个杨同学名字的域名，然后做了点东西建了一个网站，后续还会有更新，因为看到杨同学最近很累很辛苦，就想先给杨同学看看，开心一下。 <br />
+				希望杨同学天天开心。<br />
+				希望我们之间能发生更多的故事。 <br />
+
+				<a href='love.html'>点击它</a>
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						杨同学，我们已经认识了
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+	<!-- 					Love u forever and ever.<br/> -->
+						<div class="signature">- 周同学</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
+			Copyright © 2011 <a href='http://hackerzhou.me'>hackerzhou.me</a> 2009-2011
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2018, 06, 30);
+		together.setHours(17);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
+
